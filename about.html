@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Noor Ali Mujtaba</title>
+
+    <!-- Import Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
+    
+    <!-- Add Font Awesome CDN in the <head> -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            background-color: #f5f5f5;
+            text-align: center;
+            position: relative;
+            scroll-behavior: smooth;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+            box-sizing: border-box; /* Prevent overflow due to padding */
+        }
+
+        /* Consistent Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+            box-sizing: border-box;
+        }
+
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #c2185b;
+        }
+
+        .navbar .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #333;
+            font-weight: normal;
+            font-size: 16px;
+        }
+
+        .navbar a:hover {
+            color: #c2185b;
+        }
+
+        /* Soft Background for About Me */
+        .about-container {
+            max-width: 1000px;
+            margin: 100px auto;
+            text-align: left;
+            padding: 50px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            background-color: #e8f0f2;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-text {
+            flex: 1;
+            max-width: 50%;
+            margin-right: 30px;
+            font-size: 14px;
+            line-height: 1.5;
+            font-weight: normal;
+        }
+
+        .about-container h1 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            font-weight: bold; /* Make the "Hi There" text bold */
+            animation: colorChange 2s infinite; /* Apply color change animation */
+        }
+
+        /* Exclamation mark color change */
+        .exclamation {
+            font-weight: bold; /* Make the exclamation mark bold */
+            color: #c2185b; /* Initial color */
+            transition: color 0.3s ease; /* Smooth transition for color change */
+            font-size: 24px; /* Increase size to make it more prominent */
+        }
+
+        /* Change color on hover */
+        h1:hover .exclamation {
+            color: #0a66c2; /* New color on hover */
+        }
+
+        /* Optional: Add animation to change color automatically */
+        @keyframes colorChange {
+            0% {
+                color: #c2185b; /* Pink */
+            }
+            50% {
+                color: #0a66c2; /* Blue */
+            }
+            100% {
+                color: #c2185b; /* Pink */
+            }
+        }
+
+        .contact {
+            margin-top: 20px;
+            font-size: 14px;
+            font-weight: normal;
+        }
+
+        .linkedin-icon, .mail-icon {
+            margin-top: 20px;
+            font-size: 36px;
+            margin-right: 10px; /* Reduced margin */
+            color: #0a66c2;
+            display: inline-block; /* Aligns them horizontally */
+        }
+
+        .linkedin-icon:hover, .mail-icon:hover {
+            color: #004182;
+        }
+
+        /* Responsive Styles */
+        @media screen and (max-width: 768px) {
+            .about-container {
+                flex-direction: column;
+                align-items: center;
+                padding: 30px;
+            }
+
+            .about-text {
+                max-width: 100%;
+                text-align: center;
+                margin-right: 0;
+            }
+
+            .navbar .nav-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="index.html" class="logo">NAM</a>
+        <div class="nav-links">
+            <a href="about.html">About Me</a>
+            <a href="projects.html">Projects</a>
+            <a href="resume.html">Resume</a>
+        </div>
+    </nav>
+
+    <!-- About Me Section -->
+    <section id="about">
+        <div class="about-container">
+            <div class="about-text">
+                <h1>Hi There<span class="exclamation">!</span></h1>
+                <p>
+                    I’m Noor, a New York City-based Project Manager and Data Analyst passionate about creating data-driven solutions across platforms. With experience at Ontario Public Service (OPS), OPG, and J&J, I drive impactful projects that bridge technology and business.
+                    <br><br>
+                    When I'm not working, I enjoy traveling with my kids, exploring new destinations, and relaxing with Netflix. I’m an avid traveler and love learning about different cultures and cuisines.
+                    <br><br>
+                    Beyond my work, I’m passionate about personal growth, whether it’s trying new recipes or planning my next adventure. I value continuous learning, authentic connections, and taking on challenges to grow both professionally and personally.
+                </p>
+
+                <!-- LinkedIn and Email Icons -->
+                <a href="https://www.linkedin.com/in/noor-ali-mujtaba-15633620b/" target="_blank" class="linkedin-icon">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="mailto:noorahsan962@gmail.com" class="mail-icon">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

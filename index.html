@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noor Ali Mujtaba</title>
+
+    <!-- Import Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&family=Poppins:wght@600&family=Raleway:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Add Font Awesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            background-color: #f5f5f5;
+            text-align: center;
+            position: relative;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            box-sizing: border-box;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+            box-sizing: border-box;
+        }
+
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+            animation: fontChange 6s infinite;
+        }
+
+        @keyframes fontChange {
+            0% { color: #c2185b; font-family: 'Poppins', sans-serif; }
+            33% { color: #00796b; font-family: 'Raleway', sans-serif; }
+            66% { color: #673ab7; font-family: 'Montserrat', sans-serif; }
+            100% { color: #c2185b; font-family: 'Poppins', sans-serif; }
+        }
+
+        .navbar .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #333;
+            font-weight: normal;
+            font-size: 16px;
+        }
+
+        .navbar a:hover {
+            color: #c2185b;
+        }
+
+        /* Landing Page Content */
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 100px 20px;
+            min-height: 100vh;
+        }
+
+        .text-content {
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .container h1 {
+            font-size: 50px;
+            font-weight: bold;
+            color: #c2185b;
+        }
+
+        .container p {
+            font-size: 20px;
+            line-height: 1.5;
+        }
+
+        .small-text {
+            font-size: 16px;
+            color: #555;
+        }
+
+        /* Arrow Styling */
+        .arrow-container {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .arrow {
+            font-size: 60px;
+            font-weight: bold;
+            color: #c2185b;
+            cursor: pointer;
+            animation: bounce 1.5s infinite;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(15px);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="index.html" class="logo">Noor Ali Mujtaba</a>
+        <div class="nav-links">
+            <a href="about.html">About Me</a>
+            <a href="projects.html">Projects</a>
+            <a href="resume.html">Resume</a>
+        </div>
+    </nav>
+
+    <!-- Landing Page Content -->
+    <div class="container">
+        <div class="text-content">
+            <h1>👋 Hey, I’m Noor</h1>
+            <p>
+                Toronto-based Project Manager and Data Analyst passionate about creating engaging, data-driven decisions across platforms.
+            </p>
+            <p class="small-text">
+                Currently working at Ontario Public Service (OPS). Previously at OPG and J&J.
+            </p>
+        </div>
+
+        <!-- Profile Image -->
+        <img src="profile_processed.jpg" alt="Noor Ali Mujtaba" class="profile-image">
+
+        <!-- Specialties Section -->
+        <div class="specialties">
+            <h2>Specialties</h2>
+            <ul>
+                <li>📌 Project Management</li>
+                <li>📊 Data Analytics</li>
+                <li>⚡ Power Platform (Power BI, Power Apps, Power Automate)</li>
+                <li>🖥️ UX Design (AODA, WCAG 2.0, Screen Readers)</li>
+            </ul>
+        </div>
+
+        <!-- Fixed Arrow Position -->
+        <div class="arrow-container">
+            <a href="about.html" class="arrow">⬇</a>
+        </div>
+    </div>
+</body>
+</html>
