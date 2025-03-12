@@ -41,7 +41,6 @@
             box-sizing: border-box;
         }
 
-        /* Logo */
         .navbar .logo {
             font-size: 24px;
             font-weight: bold;
@@ -146,7 +145,7 @@
             cursor: pointer;
             font-size: 24px;
             color: #333;
-            margin-right: 20px;  /* Added margin between toggle and logo */
+            margin-right: 20px;  /* Space between toggle button and logo */
         }
     </style>
 </head>
@@ -154,10 +153,9 @@
     
     <!-- Navbar -->
     <nav class="navbar">
-        <!-- Mode Toggle Button added next to Logo -->
-     
+        <!-- Mode Toggle Button on the left -->
+        <div class="mode-toggle" onclick="toggleMode()">🌙</div>
         <a href="index.html" class="logo">Noor Ali Mujtaba</a>
-   <div class="mode-toggle" onclick="toggleMode()">🌙</div>
         <div class="nav-links">
             <a href="about.html">About Me</a>
             <a href="projects.html">Projects</a>
