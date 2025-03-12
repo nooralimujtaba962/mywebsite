@@ -41,14 +41,14 @@
             box-sizing: border-box;
         }
 
-        /* Align the Logo to the Left */
+        /* Logo on the left */
         .navbar .logo {
             font-size: 24px;
             font-weight: bold;
             margin-left: 0;
         }
 
-        /* Align Links to the Center */
+        /* Center the Links */
         .navbar .nav-links {
             display: flex;
             gap: 20px;
@@ -67,7 +67,7 @@
             color: #c2185b;
         }
 
-        /* Align Mode Toggle to the Right */
+        /* Mode Toggle on the right */
         .navbar .mode-toggle {
             position: absolute;
             right: 30px;  /* Position toggle at the right corner */
@@ -157,14 +157,18 @@
     
     <!-- Navbar -->
     <nav class="navbar">
-        <!-- Mode Toggle Button on the right -->
-        <div class="mode-toggle" onclick="toggleMode()">🌙</div>
+        <!-- Logo on the left -->
         <a href="index.html" class="logo">Noor Ali Mujtaba</a>
+
+        <!-- Centered Links -->
         <div class="nav-links">
             <a href="about.html">About Me</a>
             <a href="projects.html">Projects</a>
             <a href="resume.html">Resume</a>
         </div>
+
+        <!-- Mode Toggle on the right -->
+        <div class="mode-toggle" onclick="toggleMode()">🌙</div>
     </nav>
 
     <!-- Landing Page Content -->
