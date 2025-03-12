@@ -34,7 +34,7 @@
         /* Navbar */
         .navbar {
             display: flex;
-            justify-content: center; /* Center the nav items */
+            justify-content: space-between; /* Align items to left and center */
             align-items: center;
             padding: 15px 30px;
             position: fixed;
@@ -50,7 +50,6 @@
         .navbar .logo {
             font-size: 24px;
             font-weight: bold;
-            animation: fontChange 6s infinite;
         }
 
         .navbar .nav-links {
@@ -131,12 +130,10 @@
             position: fixed;
             top: 20px;
             right: 20px;
-            background-color: #c2185b;
+            background-color: transparent;
             border: none;
-            color: white;
+            color: #333;
             font-size: 18px;
-            padding: 10px;
-            border-radius: 50%;
             cursor: pointer;
             z-index: 11;
         }
