@@ -18,9 +18,7 @@
             margin: 0;
             background-color: #f5f5f5;
             text-align: center;
-            position: relative;
             scroll-behavior: smooth;
-            overflow-x: hidden; /* Prevent horizontal scrolling */
             box-sizing: border-box;
         }
 
@@ -36,24 +34,23 @@
             width: 100%;
             background-color: #ffffff;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            z-index: 10;
+            z-index: 1000;
             box-sizing: border-box;
         }
 
-        /* Logo (NAM) aligned to the left */
+        /* Logo */
         .navbar .logo {
             font-size: 26px;
             font-weight: bold;
             color: #c2185b;
-            margin-left: 0;
         }
 
-        /* Centered Links */
+        /* Centered Navigation Links */
         .navbar .nav-links {
             display: flex;
             gap: 25px;
-            justify-content: center;  /* Center the links */
-            flex-grow: 1;  /* Takes up remaining space to center links */
+            justify-content: center;
+            flex-grow: 1;
         }
 
         .navbar a {
@@ -77,42 +74,28 @@
             cursor: pointer;
         }
 
-        .navbar .toggle-btn:focus {
-            outline: none;
-        }
-
-        /* Toggle Button Animation */
-        .navbar.open .toggle-btn i {
-            transform: rotate(90deg);
-            transition: transform 0.3s ease;
-        }
-
         /* Resume Section */
         .resume-container {
-            max-width: 1000px;
-            margin: 100px auto;
-            padding: 50px 20px;
-            background-color: #e8f0f2; /* Same Background as About Me */
+            max-width: 800px;
+            margin: 120px auto 50px; /* Add margin-top to prevent overlap with navbar */
+            padding: 40px;
+            background-color: #fff;
             border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: left;
-            gap: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
 
         .resume-container h1 {
             font-size: 28px;
-            color: #1d3557; /* Default Color */
-            margin-bottom: 15px;
-            transition: color 0.3s ease; /* Smooth transition for color change */
+            color: #1d3557;
+            margin-bottom: 20px;
         }
 
         .resume-text {
             font-size: 18px;
             line-height: 1.6;
             color: #333;
+            margin-bottom: 20px;
         }
 
         .resume-link {
@@ -137,26 +120,76 @@
             .navbar .nav-links {
                 flex-direction: column;
                 gap: 10px;
-                display: none; /* Hide navigation links by default */
+                display: none; /* Hide links by default on mobile */
                 width: 100%;
                 text-align: center;
+                background-color: white;
+                position: absolute;
+                top: 60px;
+                left: 0;
                 padding: 10px 0;
-                background-color: #fff; /* Make background white for mobile */
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             }
 
             .navbar .toggle-btn {
                 display: block;
+                cursor: pointer;
             }
 
             .navbar.active .nav-links {
-                display: flex; /* Show navigation links when the navbar is active */
+                display: flex; /* Show navigation links when active */
             }
 
             .resume-container {
-                padding: 30px;
                 width: 90%;
+                padding: 30px;
+                margin-top: 140px; /* Prevent navbar from covering content */
             }
+        }
+    </style>
+</head>
+<body>
 
-            .resume-text {
-                font-size: 16px;
-                text-align: center
+    <!-- Navbar -->
+    <nav class="navbar">
+        <!-- Logo on the left -->
+        <a href="index.html" class="logo">NAM</a>
+        
+        <!-- Centered Links -->
+        <div class="nav-links">
+            <a href="about.html">About Me</a>
+            <a href="projects.html">Projects</a>
+            <a href="resume.html">Resume</a>
+        </div>
+
+        <!-- Toggle Button on the right -->
+        <button class="toggle-btn" id="toggle-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <!-- Resume Section -->
+    <section id="resume">
+        <div class="resume-container">
+            <h1>Resume</h1>
+            <p class="resume-text">
+                Download my resume to learn more about my work experience, skills, and professional background.
+            </p>
+            <a href="resume.pdf" download class="resume-link">
+                <i class="fas fa-download"></i> Download Resume
+            </a>
+        </div>
+    </section>
+
+    <script>
+        // Toggle the navbar on mobile
+        const toggleButton = document.getElementById('toggle-btn');
+        const navbar = document.querySelector('.navbar');
+
+        toggleButton.addEventListener('click', () => {
+            navbar.classList.toggle('active'); // Toggle menu
+        });
+    </script>
+
+</body>
+</html>
