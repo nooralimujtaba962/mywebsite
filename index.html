@@ -34,7 +34,7 @@
         /* Navbar */
         .navbar {
             display: flex;
-            justify-content: space-between; /* Align items to left and center */
+            justify-content: space-between; /* Align logo to left and nav items to the center */
             align-items: center;
             padding: 15px 30px;
             position: fixed;
@@ -56,6 +56,9 @@
             display: flex;
             gap: 20px;
             margin: 0;
+            position: absolute; /* Center the links horizontally */
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         .navbar a {
