@@ -22,6 +22,13 @@
             scroll-behavior: smooth;
             overflow-x: hidden;
             box-sizing: border-box;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #121212;
+            color: #fff;
         }
 
         /* Navbar */
@@ -43,19 +50,17 @@
         .navbar .logo {
             font-size: 24px;
             font-weight: bold;
-            animation: fontChange 6s infinite;
-        }
-
-        @keyframes fontChange {
-            0% { color: #c2185b; font-family: 'Poppins', sans-serif; }
-            33% { color: #00796b; font-family: 'Raleway', sans-serif; }
-            66% { color: #673ab7; font-family: 'Montserrat', sans-serif; }
-            100% { color: #c2185b; font-family: 'Poppins', sans-serif; }
+            color: #c2185b;
+            margin-right: 30px; /* Add space between logo and navbar items */
         }
 
         .navbar .nav-links {
             display: flex;
             gap: 20px;
+            margin: 0;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         .navbar a {
@@ -67,6 +72,37 @@
 
         .navbar a:hover {
             color: #c2185b;
+        }
+
+        /* Mobile Navbar: Hide links initially */
+        .nav-links {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar.active .nav-links {
+            display: flex;
+        }
+
+        /* Toggle Button */
+        .toggle-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: transparent;
+            border: none;
+            color: #333;
+            font-size: 18px;
+            cursor: pointer;
+            z-index: 11;
         }
 
         /* Landing Page Content */
@@ -82,6 +118,7 @@
         .text-content {
             max-width: 600px;
             text-align: center;
+            margin-bottom: 20px;
         }
 
         .container h1 {
@@ -97,6 +134,35 @@
 
         .small-text {
             font-size: 16px;
+            color: #555;
+        }
+
+        /* Profile Image */
+        .profile-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 50%;
+            margin-top: 30px;
+        }
+
+        /* Specialties Section */
+        .specialties {
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        .specialties h2 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        .specialties ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .specialties li {
+            font-size: 18px;
             color: #555;
         }
 
@@ -124,18 +190,63 @@
                 transform: translateY(15px);
             }
         }
+
+        /* Mobile-friendly Adjustments */
+        @media screen and (max-width: 768px) {
+            .navbar .nav-links {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+            }
+
+            .navbar .logo {
+                font-size: 20px; /* Slightly smaller logo on mobile */
+            }
+
+            .container h1 {
+                font-size: 40px;
+            }
+
+            .container p {
+                font-size: 18px;
+            }
+
+            .small-text {
+                font-size: 14px;
+            }
+
+            .specialties h2 {
+                font-size: 20px;
+            }
+
+            .specialties li {
+                font-size: 16px;
+            }
+
+            .profile-image {
+                width: 200px;
+                height: 200px;
+            }
+
+            .arrow {
+                font-size: 50px;
+            }
+        }
     </style>
 </head>
 <body>
 
     <!-- Navbar -->
     <nav class="navbar">
-        <a href="index.html" class="logo">Noor Ali Mujtaba</a>
+        <a href="index.html" class="logo">NAM</a>
         <div class="nav-links">
             <a href="about.html">About Me</a>
             <a href="projects.html">Projects</a>
             <a href="resume.html">Resume</a>
         </div>
+        <!-- Toggle Button -->
+        <button class="toggle-btn" onclick="toggleMenu()">☰</button>
     </nav>
 
     <!-- Landing Page Content -->
@@ -169,5 +280,22 @@
             <a href="about.html" class="arrow">⬇</a>
         </div>
     </div>
+
+    <!-- Toggle Theme Button -->
+    <button class="toggle-btn" onclick="toggleTheme()">🌙</button>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const navbar = document.querySelector('.navbar');
+            navbar.classList.toggle('active'); // Show/hide nav links
+        }
+
+        // Theme Toggle Function
+        function toggleTheme() {
+            const body = document.body;
+            body.classList.toggle('dark-mode');
+        }
+    </script>
 </body>
 </html>
