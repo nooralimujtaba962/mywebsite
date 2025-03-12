@@ -84,9 +84,15 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            background-color: #e8f0f2;
+            background-color: #e8f0f2; /* Default light background */
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease; /* Transition for background color */
+        }
+
+        /* Night Mode About Section */
+        body.night-mode .about-container {
+            background-color: #444; /* Darker background in night mode */
         }
 
         .about-text {
