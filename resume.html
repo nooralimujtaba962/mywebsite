@@ -24,7 +24,7 @@
             box-sizing: border-box;
         }
 
-        /* Navbar (Consistent with Other Pages) */
+        /* Navbar */
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -60,6 +60,20 @@
 
         .navbar a:hover {
             color: #c2185b;
+        }
+
+        /* Toggle Button */
+        .navbar .toggle-btn {
+            display: none;
+            font-size: 30px;
+            color: #333;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        .navbar .toggle-btn:focus {
+            outline: none;
         }
 
         /* Resume Section */
@@ -112,6 +126,17 @@
             .navbar .nav-links {
                 flex-direction: column;
                 gap: 10px;
+                display: none; /* Hide navigation links by default */
+                width: 100%;
+                text-align: center;
+            }
+
+            .navbar .toggle-btn {
+                display: block;
+            }
+
+            .navbar.active .nav-links {
+                display: flex; /* Show navigation links when the navbar is active */
             }
 
             .resume-container {
@@ -136,6 +161,9 @@
     <!-- Navbar -->
     <nav class="navbar">
         <a href="index.html" class="logo">NAM</a>
+        <button class="toggle-btn" id="toggle-btn">
+            <i class="fas fa-bars"></i>
+        </button>
         <div class="nav-links">
             <a href="about.html">About Me</a>
             <a href="projects.html">Projects</a>
@@ -158,6 +186,14 @@
     </section>
 
     <script>
+        // Toggle the navbar on mobile
+        const toggleButton = document.getElementById('toggle-btn');
+        const navbar = document.querySelector('.navbar');
+
+        toggleButton.addEventListener('click', () => {
+            navbar.classList.toggle('active'); // Toggle the "active" class to show/hide the menu
+        });
+
         // Function to generate random color
         function getRandomColor() {
             const letters = '0123456789ABCDEF';
