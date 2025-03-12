@@ -40,15 +40,20 @@
             box-sizing: border-box;
         }
 
+        /* Logo (NAM) aligned to the left */
         .navbar .logo {
             font-size: 26px;
             font-weight: bold;
             color: #c2185b;
+            margin-left: 0;
         }
 
+        /* Centered Links */
         .navbar .nav-links {
             display: flex;
             gap: 25px;
+            justify-content: center;  /* Center the links */
+            flex-grow: 1;  /* Takes up remaining space to center links */
         }
 
         .navbar a {
@@ -166,15 +171,20 @@
 
     <!-- Navbar -->
     <nav class="navbar">
+        <!-- Logo (NAM) on the left -->
         <a href="index.html" class="logo">NAM</a>
-        <button class="toggle-btn" id="toggle-btn">
-            <i class="fas fa-bars"></i>
-        </button>
+        
+        <!-- Centered Navigation Links -->
         <div class="nav-links">
             <a href="about.html">About Me</a>
             <a href="projects.html">Projects</a>
             <a href="resume.html">Resume</a>
         </div>
+
+        <!-- Toggle Button on the right -->
+        <button class="toggle-btn" id="toggle-btn">
+            <i class="fas fa-bars"></i>
+        </button>
     </nav>
 
     <!-- Resume Section -->
