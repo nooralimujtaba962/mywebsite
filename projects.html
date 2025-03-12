@@ -31,10 +31,14 @@
             color: #fff;
         }
 
+        .projects-container.dark-mode {
+            background-color: #333; /* Dark background for projects container */
+        }
+
         /* Consistent Navbar */
         .navbar {
             display: flex;
-            justify-content: space-between; /* Align logo to left and nav items to the center */
+            justify-content: space-between;
             align-items: center;
             padding: 15px 30px;
             position: fixed;
@@ -83,9 +87,10 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            background-color: #e8f0f2;
+            background-color: #e8f0f2; /* Default light background */
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease; /* Smooth transition when switching modes */
         }
 
         .project-card {
@@ -296,7 +301,9 @@
         // Theme toggle function
         function toggleTheme() {
             const body = document.body;
+            const projectsContainer = document.querySelector('.projects-container');
             body.classList.toggle('dark-mode');
+            projectsContainer.classList.toggle('dark-mode');
             const button = document.querySelector('.toggle-btn');
             if (body.classList.contains('dark-mode')) {
                 button.textContent = '🌞'; // Change button text to sun
