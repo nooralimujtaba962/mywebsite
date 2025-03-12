@@ -3,8 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Noor Ali Mujtaba - Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
+    <title>Noor Ali Mujtaba</title>
+
+    <!-- Import Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&family=Poppins:wght@600&family=Raleway:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Add Font Awesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
     <style>
         /* General Styles */
         body {
@@ -24,21 +30,44 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px;
-            background-color: #333;
-            color: white;
+            padding: 15px 30px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+            box-sizing: border-box;
         }
 
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-
-        /* Toggle Button */
-        .mode-toggle {
-            cursor: pointer;
+        .navbar .logo {
             font-size: 24px;
+            font-weight: bold;
+            animation: fontChange 6s infinite;
+        }
+
+        @keyframes fontChange {
+            0% { color: #c2185b; font-family: 'Poppins', sans-serif; }
+            33% { color: #00796b; font-family: 'Raleway', sans-serif; }
+            66% { color: #673ab7; font-family: 'Montserrat', sans-serif; }
+            100% { color: #c2185b; font-family: 'Poppins', sans-serif; }
+        }
+
+        .navbar .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #333;
+            font-weight: normal;
+            font-size: 16px;
+        }
+
+        .navbar a:hover {
+            color: #c2185b;
         }
 
         /* Day Mode */
@@ -53,31 +82,75 @@
             color: #fff;
         }
 
+        /* Landing Page Content */
         .container {
-            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 100px 20px;
+            min-height: 100vh;
         }
 
-        h1, p {
-            margin: 0;
+        .text-content {
+            max-width: 600px;
+            text-align: center;
         }
 
-        /* Bio Section */
-        .bio {
-            margin-top: 30px;
+        .container h1 {
+            font-size: 50px;
+            font-weight: bold;
+            color: #c2185b;
         }
 
-        .bio img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            margin-top: 20px;
+        .container p {
+            font-size: 20px;
+            line-height: 1.5;
+        }
+
+        .small-text {
+            font-size: 16px;
+            color: #555;
+        }
+
+        /* Arrow Styling */
+        .arrow-container {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .arrow {
+            font-size: 60px;
+            font-weight: bold;
+            color: #c2185b;
+            cursor: pointer;
+            animation: bounce 1.5s infinite;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(15px);
+            }
+        }
+
+        /* Mode Toggle Button */
+        .mode-toggle {
+            cursor: pointer;
+            font-size: 24px;
+            margin-left: 20px;
         }
     </style>
 </head>
 <body class="day-mode"> <!-- Default to Day Mode -->
+    
     <!-- Navbar -->
     <nav class="navbar">
-        <a href="index.html" class="logo">NAM</a>
+        <a href="index.html" class="logo">Noor Ali Mujtaba</a>
         <div class="nav-links">
             <a href="about.html">About Me</a>
             <a href="projects.html">Projects</a>
@@ -86,16 +159,35 @@
         <div class="mode-toggle" onclick="toggleMode()">🌙</div> <!-- Night Mode Toggle -->
     </nav>
 
-    <!-- Page Content -->
+    <!-- Landing Page Content -->
     <div class="container">
-        <h1>Welcome to My Website</h1>
-        <p>Enjoy exploring the content!</p>
+        <div class="text-content">
+            <h1>👋 Hey, I’m Noor</h1>
+            <p>
+                Toronto-based Project Manager and Data Analyst passionate about creating engaging, data-driven decisions across platforms.
+            </p>
+            <p class="small-text">
+                Currently working at Ontario Public Service (OPS). Previously at OPG and J&J.
+            </p>
+        </div>
 
-        <!-- Bio Section -->
-        <div class="bio">
-            <h2>Toronto-based Project Manager and Data Analyst</h2>
-            <p>Passionate about creating data-driven solutions and making impactful decisions. Experienced in managing projects that deliver value and drive success.</p>
-            <img src="image.jpg" alt="Your Image"> <!-- Replace with your actual image path -->
+        <!-- Profile Image -->
+        <img src="profile_processed.jpg" alt="Noor Ali Mujtaba" class="profile-image">
+
+        <!-- Specialties Section -->
+        <div class="specialties">
+            <h2>Specialties</h2>
+            <ul>
+                <li>📌 Project Management</li>
+                <li>📊 Data Analytics</li>
+                <li>⚡ Power Platform (Power BI, Power Apps, Power Automate)</li>
+                <li>🖥️ UX Design (AODA, WCAG 2.0, Screen Readers)</li>
+            </ul>
+        </div>
+
+        <!-- Fixed Arrow Position -->
+        <div class="arrow-container">
+            <a href="about.html" class="arrow">⬇</a>
         </div>
     </div>
 
