@@ -8,7 +8,7 @@
     <!-- Import Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
     
-    <!-- Add Font Awesome for Icons -->
+    <!-- Add Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
     <style>
@@ -19,7 +19,8 @@
             background-color: #f5f5f5;
             text-align: center;
             scroll-behavior: smooth;
-            box-sizing: border-box;
+            overflow-x: hidden; 
+            box-sizing: border-box; 
         }
 
         /* Navbar */
@@ -37,7 +38,7 @@
             z-index: 1000;
         }
 
-        /* Logo on the Left */
+        /* Logo (NAM) on the left */
         .navbar .logo {
             font-size: 24px;
             font-weight: bold;
@@ -63,13 +64,14 @@
             color: #c2185b;
         }
 
-        /* Toggle Button on the Right */
+        /* Toggle Button (Right) */
         .toggle-btn {
             font-size: 26px;
             color: #333;
             background-color: transparent;
             border: none;
             cursor: pointer;
+            display: none; /* Hidden on desktop */
         }
 
         /* Projects Section */
@@ -110,6 +112,7 @@
         .project-card p {
             font-size: 14px;
             color: #666;
+            line-height: 1.5;
             margin-bottom: 20px;
         }
 
@@ -123,25 +126,7 @@
             color: #c2185b;
         }
 
-        /* Project Details */
-        .project-details {
-            display: none;
-            margin-top: 15px;
-            background-color: #ffffff;
-            padding: 15px;
-            border-radius: 5px;
-            font-size: 14px;
-            color: #333;
-            text-align: left;
-            border: 1px solid #ddd;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            max-height: 0;
-            opacity: 0;
-            transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
-            overflow: hidden;
-        }
-
-        /* Responsive Styles */
+        /* Responsive Navbar */
         @media screen and (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -154,7 +139,6 @@
                 background-color: white;
                 text-align: center;
                 padding: 10px 0;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             }
 
             .toggle-btn {
@@ -163,10 +147,6 @@
 
             .navbar.active .nav-links {
                 display: flex;
-            }
-
-            .project-card {
-                width: 90%;
             }
         }
     </style>
@@ -215,7 +195,6 @@
         </div>
     </section>
 
-    <!-- JavaScript -->
     <script>
         // Toggle Navbar for Mobile
         document.getElementById("toggle-btn").addEventListener("click", function() {
@@ -226,14 +205,10 @@
         function toggleDetails(event, projectId) {
             event.preventDefault();
             var details = document.getElementById(projectId);
-            if (details.style.maxHeight === "0px" || details.style.maxHeight === "") {
-                details.style.maxHeight = "300px";
-                details.style.opacity = "1";
+            if (details.style.display === "none" || details.style.display === "") {
                 details.style.display = "block";
             } else {
-                details.style.maxHeight = "0";
-                details.style.opacity = "0";
-                setTimeout(() => details.style.display = "none", 300);
+                details.style.display = "none";
             }
         }
     </script>
